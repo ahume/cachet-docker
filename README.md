@@ -1,6 +1,6 @@
 # Cachet Docker Image
 
-This is the official repository of the [Docker image](https://hub.docker.com/r/cachethq/docker/) for [Cachet](https://github.com/CachetHQ/Cachet).
+This is a forked version of the official Cachet Docker image with a couple of changes to make it run more effectively on GCP Cloud Run.
 
 [Cachet](https://github.com/CachetHQ/Cachet) is a beautiful and powerful open source status page system, a free replacement for services such as StatusPage.io, Status.io and others.
 
@@ -60,7 +60,7 @@ Please use a [tagged Cachet Docker image release](https://github.com/CachetHQ/Do
 
 # Debugging
 
-* The services such as Cachet, supervisord, nginx, and php-fpm log to `stdout` and `stderr`, and are visible in the Docker runtime output. 
+* The services such as Cachet, supervisord, nginx, and php-fpm log to `stdout` and `stderr`, and are visible in the Docker runtime output.
 
 * Setting the `DEBUG` Docker environment variable within the `docker-compose.yml` file or at runtime to `true` will enable debugging of the container entrypoint init script.
 
@@ -89,7 +89,7 @@ Use `make test` to manually run the tests.
 
 3. Setup the Cachet project:
 
-Note: This requires [Composer](https://getcomposer.org/) be installed on your Docker host.  
+Note: This requires [Composer](https://getcomposer.org/) be installed on your Docker host.
 
  ```shell
 cd Cachet
@@ -104,7 +104,7 @@ cd ..
  cachet:
     volumes:
       - ./Cachet/:/var/www/html/
-    ...  
+    ...
   ```
 
 5. Build and run the container:
